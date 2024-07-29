@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+/* ヘッダー */
+header {
+    background-color: mediumblue;
+}
+.burgerBox button.burgerBtn {
+    display: none;
+}
+.burgerBox label.burgerBtn {
+    display: flex;
+}
+
+/* メイン */
+main {
+    min-height: calc(100vh - 228px);
+}
+
+
+.mainVisual {
+    height: calc(100svh - 60px);
+    width: 100%;
+    margin-top: 60px;
+    overflow: hidden;
+}
+.mainVisual .slider {
+    opacity: 1;
+    height: calc(100svh - 60px);
+}
+.mainVisual .slider img {
+    position: absolute;
+    display: block;
+    height: calc(100svh - 60px);
+    width: 100%;
+    animation: slideshow 30s ease infinite;
+    opacity: 0;
+}
+.mainVisual .slider img:nth-of-type(2) {
+    animation-delay: 10s;
+} 
+.mainVisual .slider img:nth-of-type(3) {
+    animation-delay: 20s;
+}
+
+.slider::after {
+    display: none;
+}
+.mainVisual .buttons {
+    display: none;
+}
+
+.mainVisual .scrollBtn {
+    cursor: default;
+}
+.mainVisual .scrollBtn:focus {
+    outline: none;
+}
+
+.scrollAnime {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+@keyframes slideshow {
+    0%{ opacity: 0; }
+    5%{ opacity: 1; }
+    33%{ opacity: 1; }
+    38%{ opacity: 0; }
+    100%{ opacity: 0; }
+}
