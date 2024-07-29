@@ -33,7 +33,6 @@ function mainMinH() {
 function slickInit() {
     $(".mainVisual .slider").slick({
         autoplay: true,
-        swipe: false,
         autoplaySpeed: 5000,
         speed: 1500,
         dots: true,
