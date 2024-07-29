@@ -243,8 +243,8 @@ main a {
 }
 .mainVisual .slick-dots li {
     font-size: 0;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     margin: 10px 5px;
     border-radius: 10px;
     background-color: darkgray;
