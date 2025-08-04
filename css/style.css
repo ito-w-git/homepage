@@ -1,0 +1,375 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    all: unset;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+head {
+    display: none;
+}
+
+body {
+    display: block;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 200%;
+    color: #222;
+}
+
+div, section {
+    display: block;
+}
+
+a {
+    display: inline;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+a:hover {
+    text-decoration-thickness: 3px;
+}
+a:focus-visible {
+    color: blue;
+    outline: blue 2px dashed;
+    outline-offset: 2px;
+}
+
+h1 {
+    display: block;
+    font-weight: bold;
+    font-size: 26px;
+}
+h2 {
+    display: block;
+    font-weight: bold;
+    font-size: 20px;
+}
+h3 {
+    display: block;
+    font-size: 18px;
+}
+
+pre {
+    display: block;
+    width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.5;
+}
+
+
+
+/*↓ ヘッダー ↓*/
+header {
+    display: block;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    min-width: 375px;
+    background-color: white;
+    box-shadow: 0 0 20px gray;
+}
+header div.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 97%;
+    max-width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+}
+header div.inner a.logo {
+    display: inline;
+    margin: 0;
+    padding: 0 5px;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: inherit;
+    text-decoration: none;
+}
+#menu li a {
+    display: inline;
+    margin: 0;
+    padding: 5px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    color: inherit;
+    text-decoration: none;
+}
+#menu li a:hover {
+    color: blue;
+    outline: blue 2px solid;
+}
+#menu li a:focus-visible {
+    border-radius: 0;
+    outline: blue 2px dashed;
+    outline-offset: 0;
+}
+
+/* ハンバーガーメニュー */
+#hamburger {
+    display: none;
+    height: 30px;
+    width: 95px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+#hamburger:focus-visible {
+    outline: blue 2px dashed;
+    outline-offset: 2px;
+}
+#hamburger div {
+    margin-right: 5px;
+}
+#hamburger span,
+#hamburger span::before,
+#hamburger span::after {
+    content: "";
+    display: block;
+    position: relative;
+    height: 2px;
+    width: 25px;
+    background-color: #222;
+    transition: 0.25s;
+}
+#hamburger span:before {
+    bottom: 10px;
+}
+#hamburger span:after {
+    top: 8px;
+}
+button.hamburger:hover ~ button.hamburger span {
+    background-color: rgba(255,255,255,0);
+}
+button.hamburger:hover ~ button.hamburger span::before {
+    bottom: 0;
+    transform: rotate(45deg)
+}
+button.hamburger:hover ~ button.hamburger span::after {
+    top: 0;
+    transform: rotate(-45deg)
+}
+
+/*↓ メイン ↓*/
+main {
+    display: block;
+    width: 100%;
+    min-width: 375px;
+}
+main:first-of-type {
+    margin-top: 60px;
+}
+
+main article.main-visual {
+    display: block;
+}
+main article.main-visual img {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: calc(100vh - 60px);
+    object-fit: cover;
+}
+
+main nav.breadcrumbs {
+    display: flex;
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+main nav.breadcrumbs li::after {
+  content: ">";
+  padding: 0 10px;
+  color: inherit;
+}
+main nav.breadcrumbs li:last-child::after {
+  content: "";
+}
+
+
+main article.article {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 120px;
+}
+
+main article.article section.news {
+    display: block;
+    outline: #222 1px solid;
+}
+main article.article section.news section {
+    display: block;
+    position: relative;
+    margin: 30px;
+}
+
+main article.article section.news section::after {
+    position: absolute;
+    bottom: -15px;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #777;
+}
+
+main article.article section.news section:last-child::after {
+  height: 0;
+}
+
+main article.article h1.title {
+    margin-top: 30px;
+}
+
+main article.article section iframe.youtube {
+    display: block;
+    padding-top: 10px;
+    aspect-ratio: 16/9;
+}
+
+main .div1 {
+    grid-column: span 12;
+}
+main .div2 {
+    grid-column: span 6;
+}
+main .div3 {
+    grid-column: span 4;
+}
+main .div4 {
+    grid-column: span 3;
+}
+main .div6 {
+    grid-column: span 2;
+}
+main .div12 {
+    grid-column: span 1;
+}
+
+main section.card a {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    outline: #222 2px solid;
+    color: inherit;
+    text-decoration: none;
+}
+main section.card a:hover {
+    color: blue;
+    outline: blue 3px solid;
+}
+main section.card a:focus-visible {
+    outline: blue 3px dashed;
+    outline-offset: 0;
+}
+main section.card a div.imgArea {
+    border-bottom: #222 2px solid;
+    overflow: hidden;
+}
+main section.card a div.imgArea img {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    transition: 0.25s;
+}
+main section.card a:hover img,
+main section.card a:focus-visible img {
+    transform: scale(1.1);
+}
+main section.card div.padding {
+    padding: 10px;
+}
+
+main section div.right {
+    text-align: right;
+}
+main section div.right a {
+    display: inline;
+}
+
+/*↓ フッター ↓*/
+footer {
+    display: block;
+    width: 100%;
+    min-width: 375px;
+}
+
+footer section.div1 {
+    grid-column: span 2;
+}
+footer section.div2 {
+    grid-column: span 1;
+}
+footer article.article {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    grid-gap: 20px;
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+footer section ol li {
+    display: block;
+}
+footer section div.right {
+    text-align: right;
+}
+
+
+/* スマホ用CSS作っていくぅ！ */
+@media (max-width: 768px) {
+    header #menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        right: 0;
+        background-color: white;
+        text-align: center;
+    }
+    header #menu li {
+        display: block;
+        padding: 15px;
+    }
+    
+    header #hamburger {
+        display: flex;
+    }
+    main article.article {
+        grid-template-columns: repeat(6,1fr);
+        grid-gap: 15px;
+        margin-bottom: 60px;
+    }
+
+    main section.div1 {
+        grid-column: span 6;
+    }
+    main section.div3 {
+        grid-column: span 3;
+    }
+    footer article.article {
+        grid-gap: 15px;
+    }
+    footer section.div2 {
+        grid-column: span 2;
+    }
+}
